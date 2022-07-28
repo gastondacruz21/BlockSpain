@@ -1,28 +1,19 @@
-# Blockchain Federal Argentina
+Este repositorio contiene lo nececario para instalar un "nodo" (sellador,gateway,transaccional).
 
-## Sitio web: https://www.bfa.ar/
-## Repositorio: https://gitlab.bfa.ar/blockchain/nucleo.git
-
-Este repositorio contiene lo nececario para instalar un "nodo BFA" (nodo sellador, nodo gateway, nodo transaccional "etc", son casi iguales).
-
-Esta guía debería funcionar en Debian o sus derivados. Testeado en *Debian* y *Ubuntu server* sin la GUI instalada en ninguno de ellos.
-
-([Capturas de pantallas instalando un Ubuntu 18.04](https://gitlab.bfa.ar/blockchain/nucleo/wikis/Instalando-Ubuntu-Server-18.04))  
-([Capturas de pantallas instalando un Debian 9.5](https://gitlab.bfa.ar/blockchain/nucleo/wikis/Instalando-debian-9.5))
+Esta guía debería funcionar en Ubuntu.  
 
 1. Instalá `git`
    - como root: `apt install git`
-2. Cloná el repositorio oficial BFA
-   - `git clone https://gitlab.bfa.ar/blockchain/nucleo.git bfa`
+2. Cloná el repositorio y descomprimi los archivos zipeados. 
+   - `git clone XXX`
 3. Ejecutá el script de instalación. Esto cambiará algunas configuraciones en tu sistema. Si te preocupa (¿debería?), podés ejecutar este escript paso a paso manualmente.
    - como root: `bfa/bin/installbfa.sh`  
    - te va a preguntar si queres conectarte a la red de `produccion` o de `prueba (test2)`  
    Van a aparecer varios **warnings** mientras se instala web3. Esto parece ser "normal". Ignorarlo no parece causar problemas.
 4. Cambiá al usuario `bfa`
    - como root: `su - bfa`
-5. <del>Crea una cuenta</del> // solamente los 20-30 nodos selladores necesitan una cuenta en el nodo
-   - <del>como bfa: `admin.sh account`</del>
-6. Comenzá la sincronización. **Esto puede llevar un rato largo** (este script se ejecuta automáticamente cuando se reinicia el sistema).
+5. Solamente los 20-30 nodos selladores necesitan una cuenta en el nodo
+6. Comenzá la sincronización. **Puede llevar un rato ** (este script se ejecuta automáticamente cuando se reinicia el sistema).
    - como bfa: `start.sh`
 7. `localstate.pl` muestra el estado actual del nodo.
 8. Monitoreá los logs con `bfalog.sh`. Apretá CTRL-C en cualquier momento para detener el `tail -f`.
@@ -36,9 +27,7 @@ Esta guía debería funcionar en Debian o sus derivados. Testeado en *Debian* y 
 
 Hay otros programas "interesantes" en los directorios `bin/` y `src/`,
 pero para los desarrolladores, el branch `dev` es más intersante y tambien el
-([repositorio contrib](https://gitlab.bfa.ar/blockchain/contrib)).
 
-**Puede tardarse alrededor de una hora conectarse la primera vez. En el log no se ve nada. Hay que tener paciencia.**
 
 ### network_id
 
@@ -63,7 +52,7 @@ Red de pruebas (test2network):
 
 ## start.sh
 
-Inicia un nodo para vos en la red BFA Ethereum.
+Inicia un nodo para vos en la red Ethereum.
 
 ## attach.sh
 
