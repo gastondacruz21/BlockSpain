@@ -1,0 +1,16 @@
+*/lastseen
+*/status
+cache
+*/*cache
+bin/env
+network/node
+network/bootnode
+network/*.pid
+test2network*/node
+test2network*/bootnode
+test2network/*.pid
+node_modules
+bin/venv
+src/*/*.bin
+src/*/*.abi
+__pycache__
